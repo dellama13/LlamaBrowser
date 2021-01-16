@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LlamaBrowser", "LlamaBrowser.csproj", "{978212EE-35C5-49C1-8073-6462F6C43073}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{978212EE-35C5-49C1-8073-6462F6C43073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978212EE-35C5-49C1-8073-6462F6C43073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978212EE-35C5-49C1-8073-6462F6C43073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978212EE-35C5-49C1-8073-6462F6C43073}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67C1CDCC-51FB-4C27-9641-92C39B8BC4F4}
+	EndGlobalSection
+EndGlobal

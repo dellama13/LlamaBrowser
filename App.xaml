@@ -1,0 +1,10 @@
+﻿<Application x:Class="LlamaBrowser.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LlamaBrowser" 
+             xmlns:binding="clr-namespace:LlamaBrowser.Binding"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <binding:TitleConverter x:Key="TitleConverter"/>
+    </Application.Resources>
+</Application>
