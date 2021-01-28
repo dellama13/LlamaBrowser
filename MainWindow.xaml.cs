@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,6 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CefSharp;
 using CefSharp.Wpf;
+using System.Printing;
 
 namespace LlamaBrowser
 {
@@ -29,6 +31,7 @@ namespace LlamaBrowser
         public MainWindow()
         {
             InitializeComponent();
+            
             Browser.MenuHandler = new Other.DisableMenuCustom();
             Browser.AddressChanged += Browser_AddressChanged;
 
@@ -68,13 +71,14 @@ namespace LlamaBrowser
 
         }
 
-        private static CookieContainer GetCookies(ChromiumWebBrowser llama
-            )
+        private static CookieContainer GetCookies(ChromiumWebBrowser llama)
         {
             CookieContainer cookieJar = new CookieContainer();
             try
             {
-                var domainUri = new Uri("");
+                string value = System.Configuration.ConfigurationManager.AppSettings["CookieDomain"];
+
+                var domainUri = new Uri(value);
                 cookieJar = GetCookiesFromURI(new Uri(domainUri.GetLeftPart(UriPartial.Authority)));
             }
             catch (Exception ex)
@@ -277,7 +281,7 @@ namespace LlamaBrowser
                 
                 oHttpRequest.ContentType = ContentType;
                 oHttpRequest.Method = "POST";
-                oHttpRequest.Referer = "DLSClient";
+                oHttpRequest.Referer = "TestClient";
                 oHttpRequest.Accept = "application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, */*";
                 oHttpRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko";
                 oHttpRequest.AllowWriteStreamBuffering = true;
