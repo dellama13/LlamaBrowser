@@ -353,12 +353,25 @@ namespace LlamaBrowser
         private BitmapSource selectedfile;
 
         private void UploadImg_Click(object sender, RoutedEventArgs e)
-
-
-
         {
-            PostImageToSite(Browser, "", _personid, "P", "jpg", selectedfile);
-            ClickOk();
+
+            if(String.IsNullOrEmpty(_personid))
+            {
+                MessageBox.Show("Cannot upload. No PersonID Found.");
+                return; 
+            }
+            else if(selectedfile == null)
+            {
+                MessageBox.Show("No image selected.");
+                return;
+            }
+            else
+            {
+                PostImageToSite(Browser, "", _personid, "P", "jpg", selectedfile);
+                ClickOk();
+
+            }
+            
 
         }
 
@@ -379,6 +392,7 @@ namespace LlamaBrowser
             {
                 selectedfile = new BitmapImage(new Uri(openFileDlg.FileName));
                 tempImg.Source = selectedfile;
+                
             }
 
         }
